@@ -32,6 +32,26 @@ export {
     getRedisPusher,
 };
 
-if (Meteor.settings.redisOplog) {
-    init(Meteor.settings.redisOplog);
+console.log("\n\n\n\n\n\n\n\nSTART WITH REDIS OPLOG PACKAGE ", Object.keys(RedisOplog), process.env.REDIS_HOST, process.env.REDIS_PASSWORD)
+if (Meteor.isProduction) {
+    RedisOplog.init({
+        debug: process.env.REDIS_OPLOG_DEBUG == "true" ? true : false,
+        redis: {
+            port: 6379,
+            host: process.env.REDIS_HOST,
+            password: process.env.REDIS_PASSWORD
+        },
+        // mutationDefaults: {
+        //     optimistic: false,
+        //     pushToRedis: true
+        // }
+    })
+} else {
+    RedisOplog.init({
+        debug: true,
+        // mutationDefaults: {
+        //     optimistic: false,
+        //     pushToRedis: true
+        // }
+    })
 }
