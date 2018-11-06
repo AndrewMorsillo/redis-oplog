@@ -32,7 +32,7 @@ export {
     getRedisPusher,
 };
 
-console.log("\n\n\n\n\n\n\n\nSTART WITH REDIS OPLOG PACKAGE ", Object.keys(RedisOplog), process.env.REDIS_HOST, process.env.REDIS_PASSWORD)
+console.log("\n\n\n\n\n\n\n\nSTART WITH REDIS OPLOG PACKAGE ", Object.keys(RedisOplog), process.env.REDIS_HOST, process.env.REDIS_PASSWORD, process.env.REDIS_OPLOG_DEBUG == "true", process.env.REDIS_OPLOG_DEBUG)
 if (Meteor.isProduction) {
     RedisOplog.init({
         debug: process.env.REDIS_OPLOG_DEBUG == "true" ? true : false,
