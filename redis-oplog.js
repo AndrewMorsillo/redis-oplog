@@ -41,10 +41,10 @@ if (Meteor.isProduction) {
             host: process.env.REDIS_HOST,
             password: process.env.REDIS_PASSWORD
         },
-        // mutationDefaults: {
-        //     optimistic: false,
-        //     pushToRedis: true
-        // }
+        mutationDefaults: {
+            optimistic: false,
+            pushToRedis: true
+        }
     })
 } else {
     RedisOplog.init({
