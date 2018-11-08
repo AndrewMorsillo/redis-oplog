@@ -49,9 +49,9 @@ if (Meteor.isProduction) {
 } else {
     RedisOplog.init({
         debug: true,
-        // mutationDefaults: {
-        //     optimistic: false,
-        //     pushToRedis: true
-        // }
+        mutationDefaults: {
+            optimistic: false,
+            pushToRedis: true
+        }
     })
 }
