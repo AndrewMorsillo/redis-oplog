@@ -1,50 +1,50 @@
-import { Collections } from './boot';
+import { Collections } from "./boot"
 
-import '../lib/utils/testing';
-import '../lib/cache/testing';
-import '../lib/processors/testing';
-import '../lib/redis/testing';
-import './initial_add';
-import './collection_hooks.server';
-import './observe_callbacks.server';
-import './mutation_callbacks';
-import './collection_transform';
+import "../lib/utils/testing"
+import "../lib/cache/testing"
+import "../lib/processors/testing"
+import "../lib/redis/testing"
+import "./initial_add"
+import "./collection_hooks.server"
+import "./observe_callbacks.server"
+import "./mutation_callbacks"
+import "./collection_transform"
 // import './server-autorun/server';
-import './transformations/server';
-import './publish-counts/server';
-import './custom-publications/server';
-import './vent/server';
-import './accounts/server';
-import './collection-defaults/server';
-import './polling/server';
-import './object-id/server';
+import "./transformations/server"
+import "./publish-counts/server"
+import "./custom-publications/server"
+import "./vent/server"
+import "./accounts/server"
+import "./collection-defaults/server"
+import "./polling/server"
+import "./object-id/server"
 
-import { _ } from 'meteor/underscore';
+import { _ } from "meteor/underscore"
 
 _.each(Collections, Collection => {
-    Collection.remove({});
+    Collection.remove({})
 
     Collection.insert({
-        title: 'A',
+        title: "A",
         score: 20,
-        game: 'chess'
-    });
+        game: "chess"
+    })
 
     Collection.insert({
-        title: 'B',
+        title: "B",
         score: 30,
-        game: 'chess'
-    });
+        game: "chess"
+    })
 
     Collection.insert({
-        title: 'C',
+        title: "C",
         score: 10,
-        game: 'domino'
-    });
+        game: "domino"
+    })
 
     Collection.insert({
-        title: 'D',
+        title: "D",
         score: 40,
-        game: 'chess'
-    });
-});
+        game: "chess"
+    })
+})

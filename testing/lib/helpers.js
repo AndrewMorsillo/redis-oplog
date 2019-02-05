@@ -1,57 +1,57 @@
-import {waitForHandleToBeReady, callWithPromise} from './sync_utils';
+import { waitForHandleToBeReady, callWithPromise } from "./sync_utils"
 
-export default (suffix) => {
+export default suffix => {
     const create = (...args) => {
-        Meteor.call(`create.${suffix}`, ...args);
-    };
+        Meteor.call(`create.${suffix}`, ...args)
+    }
 
     const createSync = (...args) => {
-        return callWithPromise(`create.${suffix}`, ...args);
-    };
+        return callWithPromise(`create.${suffix}`, ...args)
+    }
 
     const fetch = (...args) => {
-        Meteor.call(`fetch.${suffix}`, ...args);
-    };
+        Meteor.call(`fetch.${suffix}`, ...args)
+    }
 
     const fetchSync = (...args) => {
-        return callWithPromise(`fetch.${suffix}`, ...args);
-    };
+        return callWithPromise(`fetch.${suffix}`, ...args)
+    }
 
     const remove = (...args) => {
-        Meteor.call(`remove.${suffix}`, ...args);
-    };
+        Meteor.call(`remove.${suffix}`, ...args)
+    }
 
     const removeSync = (...args) => {
-        return callWithPromise(`remove.${suffix}`, ...args);
-    };
+        return callWithPromise(`remove.${suffix}`, ...args)
+    }
 
     const update = (...args) => {
-        Meteor.call(`update.${suffix}`, ...args);
-    };
+        Meteor.call(`update.${suffix}`, ...args)
+    }
 
     const updateSync = (...args) => {
-        return callWithPromise(`update.${suffix}`, ...args);
-    };
+        return callWithPromise(`update.${suffix}`, ...args)
+    }
 
     const upsert = (...args) => {
-        Meteor.call(`upsert.${suffix}`, ...args);
-    };
+        Meteor.call(`upsert.${suffix}`, ...args)
+    }
 
     const upsertSync = (...args) => {
-        return callWithPromise(`upsert.${suffix}`, ...args);
-    };
+        return callWithPromise(`upsert.${suffix}`, ...args)
+    }
 
     const synthetic = (...args) => {
-        Meteor.call(`synthetic.${suffix}`, ...args);
-    };
+        Meteor.call(`synthetic.${suffix}`, ...args)
+    }
 
     const syntheticSync = (...args) => {
-        return callWithPromise(`synthetic.${suffix}`, ...args);
-    };
+        return callWithPromise(`synthetic.${suffix}`, ...args)
+    }
 
     const subscribe = (...args) => {
-        return Meteor.subscribe(`publication.${suffix}`, ...args);
-    };
+        return Meteor.subscribe(`publication.${suffix}`, ...args)
+    }
 
     return {
         create,
